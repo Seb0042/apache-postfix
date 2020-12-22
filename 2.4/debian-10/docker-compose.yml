@@ -1,0 +1,13 @@
+version: '2'
+services:
+  apache:
+    image: apache-postfix:1.0.2
+    ports:
+      - 80:8080
+      - 443:8443
+      - 25:25
+    environment:
+      TX_SMTP_RELAY_HOST: 10.99.197.50
+      TX_SMTP_RELAY_MYHOSTNAME: my.host.local
+      TX_SMTP_RELAY_USERNAME: relayuser
+      TX_SMTP_RELAY_PASSWORD: ''
